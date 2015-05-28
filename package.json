@@ -1,6 +1,6 @@
 {
   "name": "react-jasmine-matchers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom matchers for React",
   "main": "lib/index.js",
   "scripts": {
@@ -27,8 +27,6 @@
   "homepage": "https://github.com/nkbt/react-jasmine-matchers",
   "readme": "README.md",
   "dependencies": {
-    "jasmine": "2.x",
-    "react": "0.13.x"
   },
   "devDependencies": {
     "babel": "^5.4.7"

@@ -3,6 +3,55 @@ Custom matchers for React
 
 Uses ReactTestUtils: https://facebook.github.io/react/docs/test-utils.html
 
+# Configuration
+
+**WARNING** expects `React.addons` and `jasmine` to be globally available
+
+## Karma config
+
+```javascript
+module.exports = function (config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine'],
+    files: [
+      'node_modules/react-jasmine-matchers/lib/index.js',
+      'spec/index.js'
+    ],
+    webpack: require('./webpack.config').karma,
+    preprocessors: {
+      'node_modules/react-jasmine-matchers/lib/index.js': ['webpack'],
+      'spec/**/*.js': ['webpack'],
+      'src/**/*.js': ['coverage']
+    },
+    reporters: ['progress']
+  });
+
+  // ...
+};
+```
+
+## Webpack config
+
+```javascript
+
+const karma = assign({}, config, {
+
+  // ...
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: 'react/addons',
+    })
+  ],
+
+  // ...
+
+});
+
+module.exports.karma = karma;
+```
+
 # Matchers
 
 ### `toBeEl()`
@@ -59,3 +108,4 @@ describe('Button', () => {
   });
 });
 ```
+

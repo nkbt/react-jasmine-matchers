@@ -3,7 +3,7 @@
 'use strict';
 
 
-const TestUtils = require('react/lib/ReactTestUtils');
+const TestUtils = React.addons.TestUtils;
 
 
 beforeEach(() => jasmine.addMatchers({
