@@ -3,11 +3,7 @@ Custom matchers for React
 
 Uses ReactTestUtils: https://facebook.github.io/react/docs/test-utils.html
 
-**WARNING**: ES6 code only
-
-
 # Matchers
-
 
 ### `toBeEl()`
 
@@ -21,30 +17,24 @@ Checks if object is element of Type. See `TestUtils.isElementOfType()`
 
 Checks if object is DOM Component. See `TestUtils.isDOMComponent()`
 
-
 ### `toBeComp()`
 
 Checks if object is Composite Component. See `TestUtils.isCompositeComponent()`
-
 
 ### `toBeCompOf(Type)`
 
 Checks if object is Composite Component of Type. See `TestUtils.isCompositeComponentWithType()`
 
-
 ### `toHaveText(text)`
 
 Checks if if element's DOM node has text with `.match(new RegExp(text)`
-
 
 # Example
 
 ```javascript
 'use strict';
 
-
 const Button = require('./Button');
-
 
 describe('Button', () => {
   it('Should render <button> tag with specified content', () => {
@@ -57,7 +47,6 @@ describe('Button', () => {
     expect(b).toBeDom();
     expect(b).toHaveText('Test');
   });
-
 
   it('Should call onClick callback when clicked', () => {
     const onClick = jasmine.createSpy('onClick');

@@ -1,9 +1,11 @@
 {
   "name": "react-jasmine-matchers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom matchers for React",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,8 +17,7 @@
     "reactjs",
     "jasmine",
     "matchers",
-    "TestUtils",
-    "ES6"
+    "TestUtils"
   ],
   "author": "Nik Butenko <nik@butenko.me> (http://butenko.me/)",
   "license": "MIT",
@@ -28,5 +29,8 @@
   "dependencies": {
     "jasmine": "2.x",
     "react": "0.13.x"
+  },
+  "devDependencies": {
+    "babel": "^5.4.7"
   }
 }
