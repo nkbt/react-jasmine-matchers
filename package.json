@@ -25,7 +25,6 @@
     "url": "https://github.com/nkbt/react-jasmine-matchers/issues"
   },
   "homepage": "https://github.com/nkbt/react-jasmine-matchers",
-  "readme": "README.md",
   "dependencies": {
   },
   "devDependencies": {
