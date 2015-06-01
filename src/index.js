@@ -30,12 +30,16 @@ beforeEach(() => jasmine.addMatchers({
 
   /**
    * Validate if element's DOM node has text
-   *
-   * @param {String} text Any string that is valid regular expression
-   * @returns {Object} Matcher
    */
-  toHaveText: text => ({
-    compare: actual => ({pass: actual.getDOMNode().textContent.match(new RegExp(text))})
+  toHaveText: () => ({
+    compare: (element, text) => {
+      const regexp = text instanceof RegExp ? text : new RegExp(text, 'ig');
+      const pass = element.getDOMNode().textContent.match(regexp);
+      const message = pass ?
+        `Text "${text}" is found within an element` :
+        `Text "${text}" is not found within an element`;
+      return {pass, message};
+    }
   })
 
 
