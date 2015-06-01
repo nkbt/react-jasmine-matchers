@@ -1,30 +1,34 @@
-/* global jasmine, beforeEach */
-
 'use strict';
 
 
-const TestUtils = React.addons.TestUtils;
-
-
-beforeEach(() => jasmine.addMatchers({
-
-
-  toBeEl: () => ({compare: actual => ({pass: TestUtils.isElement(actual)})}),
-
-
-  toBeElOf: compClass => ({
-    compare: actual => ({pass: TestUtils.isElementOfType(actual, compClass)})
+module.exports = TestUtils => ({
+  toBeEl: () => ({
+    compare: component =>
+      ({pass: TestUtils.isElement(component)})
   }),
 
 
-  toBeDom: () => ({compare: actual => ({pass: TestUtils.isDOMComponent(actual)})}),
+  toBeElOf: () => ({
+    compare: (component, componentType) =>
+      ({pass: TestUtils.isElementOfType(component, componentType)})
+  }),
 
 
-  toBeComp: () => ({compare: actual => ({pass: TestUtils.isCompositeComponent(actual)})}),
+  toBeDom: () => ({
+    compare: component =>
+      ({pass: TestUtils.isDOMComponent(component)})
+  }),
 
 
-  toBeCompOf: compClass => ({
-    compare: actual => ({pass: TestUtils.isCompositeComponentWithType(actual, compClass)})
+  toBeComp: () => ({
+    compare: component =>
+      ({pass: TestUtils.isCompositeComponent(component)})
+  }),
+
+
+  toBeCompOf: () => ({
+    compare: (component, componentType) =>
+      ({pass: TestUtils.isCompositeComponentWithType(component, componentType)})
   }),
 
 
@@ -41,6 +45,4 @@ beforeEach(() => jasmine.addMatchers({
       return {pass, message};
     }
   })
-
-
-}));
+});
