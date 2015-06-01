@@ -1,6 +1,6 @@
 {
   "name": "react-jasmine-matchers",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Custom matchers for React",
   "main": "lib/index.js",
   "scripts": {
