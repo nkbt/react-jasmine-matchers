@@ -1,4 +1,5 @@
-# react-jasmine-matchers
+# react-jasmine-matchers ![DEPRECATED](https://img.shields.io/badge/status-DEPRECATED-red.svg)
+
 Custom matchers for React
 
 Requires ReactTestUtils: https://facebook.github.io/react/docs/test-utils.html
